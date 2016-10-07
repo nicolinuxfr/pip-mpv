@@ -1,4 +1,4 @@
--- ======================PRÉPARATION==============================
+-- ======================PREPARATION==============================
 set Chrome to false
 set Safari to false
 set Firefox to false
@@ -19,7 +19,7 @@ if application "plugin-container" is running then
 	if app_name is "Firefox" then set Firefox to true
 end if
 
--- ======================RÉCUPÉRATION URL ET TITRE==============================
+-- ======================TRAITEMENT==============================
 
 if Safari is true then
 	tell application "Safari" to set theURL to ({URL of current tab of window 1} as string)
