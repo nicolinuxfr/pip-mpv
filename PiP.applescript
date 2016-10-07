@@ -37,7 +37,7 @@ else if (the clipboard as string) begins with "http" then
 	set theURL to (the clipboard as string)
 end if
 
-set liste to {"youtube", "vimeo", "dailymotion"}
+set liste to {"youtube", "vimeo", "dailymotion", "m4v", "mp4", "m3u8"}
 repeat with x in liste
 	if theURL contains x then
 		do shell script "/usr/local/bin/mpv --ontop --window-scale=0.5 --geometry=0:0 " & quoted form of theURL
