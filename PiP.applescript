@@ -2,8 +2,6 @@
 set Chrome to false
 set Safari to false
 set Firefox to false
-set leTitre to false
-set laDescription to " "
 
 tell application "System Events" to set app_name to name of the first process whose frontmost is true
 
