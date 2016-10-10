@@ -13,8 +13,10 @@ Le script ouvre une fenêtre de mpv en bas à gauche, avec une vidéo réduite d
 - Twitch
 - Autres : les liens vers flux de streaming (m3u8) ou des vidéos seront aussi pris en charge
 
+**Note** : voici la [liste de tous les sites](http://rg3.github.io/youtube-dl/supportedsites.html) pris en charge par mpv. Modifiez la ligne 38](https://github.com/nicolinuxfr/pip-mpv/blob/master/PiP.applescript#L38) pour adapter le script en fonction de vos besoins.
+
 ## Prérequis
 
 Installez mpv avant toute chose en passant par [Homebrew](http://brew.sh). 
 
-Fonctionne avec Safari, Chrome et Firefox et en dernier recours, le contenu du presse-papier.
+Le script utilise l'URL fournie par le navigateur et en dernier recours, le contenu du presse-papier. Il fonctionne avec Safari, Chrome et Firefox. 
