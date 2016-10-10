@@ -10,6 +10,7 @@ Le script ouvre une fenêtre de mpv en bas à gauche, avec une vidéo réduite d
 - YouTube
 - Vimeo
 - Dailymotion
+- Facebook
 - Twitch
 - Autres : les liens vers flux de streaming (m3u8) ou des vidéos seront aussi pris en charge
 
