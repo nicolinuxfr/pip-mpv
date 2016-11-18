@@ -2,6 +2,7 @@
 set Chrome to false
 set Safari to false
 set Firefox to false
+set debutVideo to false
 
 tell application "System Events" to set app_name to name of the first process whose frontmost is true
 
@@ -26,7 +27,6 @@ if Safari is true then
 			activate
 			try
 			set debutVideo to do Javascript "ytplayer = document.getElementById(\"movie_player\");ytplayer.getCurrentTime();" in document 1
-			set theURL to theURL & "?t=" & debutVideo & "s"
 		end try
 		end tell
 	end if
@@ -47,7 +47,9 @@ end if
 set liste to {"youtube", "youtu.be", "vimeo", "dailymotion", "m4v", "mp4", "m3u8", "twitch", "facebook"}
 repeat with x in liste
 	if theURL contains x then
-		do shell script "/usr/local/bin/mpv --ontop --window-scale=0.5 --geometry=0:0 --no-border " & quoted form of theURL
+		set commandeMPV to "/usr/local/bin/mpv --ontop --window-scale=0.5 --geometry=0:0 --no-border "
+		if debutVideo is not false then set commandeMPV to commandeMPV & "--start=" & (debutVideo as integer) & " "
+		do shell script commandeMPV & quoted form of theURL
 		exit repeat
 	end if
 end repeat
