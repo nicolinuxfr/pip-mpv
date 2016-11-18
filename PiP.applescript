@@ -21,6 +21,15 @@ end if
 
 if Safari is true then
 	tell application "Safari" to set theURL to ({URL of current tab of window 1} as string)
+	if theURL contains "youtu" then
+		tell application "Safari"
+			activate
+			try
+			set debutVideo to do Javascript "ytplayer = document.getElementById(\"movie_player\");ytplayer.getCurrentTime();" in document 1
+			set theURL to theURL & "?t=" & debutVideo & "s"
+		end try
+		end tell
+	end if
 else if Chrome is true then
 	tell application "Google Chrome" to set theURL to ({get URL of active tab of first window} as string)
 else if Firefox is true then
