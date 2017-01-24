@@ -49,7 +49,7 @@ repeat with x in liste
 	if theURL contains x then
 		set commandeMPV to "/usr/local/bin/mpv --ontop --window-scale=0.5 --geometry=0:0 --no-border "
 		if debutVideo is not false then set commandeMPV to commandeMPV & "--start=" & (debutVideo as integer) & " "
-		do shell script commandeMPV & quoted form of theURL
+		do shell script commandeMPV & quoted form of theURL & " > /dev/null 2>&1 &"
 		exit repeat
 	end if
 end repeat
